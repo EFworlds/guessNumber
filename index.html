@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="./assets/css/bootstrap.css">
+
+    <!-- FA5 CSS -->
+	<link rel="stylesheet" href="./assets/fa/css/all.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<script src="./assets/js/jscript.js"></script>
+
+	<title>Guess Number</title>
+	
+  </head>
+  <body>
+   
+	<div class="container mt-5 ">
+		
+		<h1 class="text-center">Игра "Угадай число"</h1>
+	
+		
+		<div class='row row-cols-1 my-4 w-50 mx-auto'>
+			<div class="form-group text-center">
+			  <label for="numberInput">Введите число от 1 до 100</label>
+			  <input type="number" class="form-control inpNum " id="numberInput" min="1" max="100" step="1" autofocus>
+			  <span class="tooltiptext" id="ttt"></span>
+			  
+			</div>
+		</div>					  
+			
+			
+	
+		<div class="text-center mt-5">
+			<button onclick = 'calc()' id='btn' class="btn btn-primary  btn-circle btn-xl">проверь</button>					
+					
+		</div> 
+		<dialog id='dialogWinner'>
+			<h3>Выйграл!</h3>
+			<button onclick='closeDialogWinner()'>Отлично</button>
+
+		</dialog>
+		<dialog id='dialogLooser'>
+			<h3>Проигрыш! </h3>
+			<h4>Закончились попытки</h4>
+			<h5>Еще разок?</h5>
+			<h5 class='my-4'>Сгенерированное число: <output id="outMod"> </output> </h5>
+			<button onclick='closeDialogLooser()'>Печально, но Да</button>
+			<output id='outMod'></output>
+
+		</dialog>
+	
+	</div>
+   
+  </body>
+</html>

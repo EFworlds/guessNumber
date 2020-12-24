@@ -1,0 +1,44 @@
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMono-Regular.woff2');
+}
+
+body {
+    font-family: 'JetBrains Mono' !important;
+}
+
+.btn-circle.btn-xl { 
+    width: 100px; 
+    height: 100px; 
+    padding: 5px 10px; 
+    border-radius: 50px; 
+    font-size: 20px; 
+    text-align: center; 
+}
+
+.inpNum{
+    width: 200px;
+    margin-left: 35%;
+    margin-top: 10px;
+    
+}
+
+
+  #ttdiv #ttt {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color:red;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    border: 1px solid black;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
