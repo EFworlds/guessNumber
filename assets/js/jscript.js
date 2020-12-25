@@ -3,7 +3,10 @@
     // console.log(secret);
     let attempt = 0;
     let tipText;        
-    let numberGuess = 0;  
+    let numberGuess = 0; 
+    let userChoices;
+    let txtTips;
+
     
     // function tips
     function ttopen(varText){
@@ -43,17 +46,17 @@
            switch (numberGuess) {
                 case secret - 3:
                 case secret + 3:
-                    ttopen('Тепло!');
+                    txtTips = 'Тепло!';
                     attempt++;
                     break;
                 case secret - 2:
                 case secret + 2:
-                    ttopen('Еще теплее!');
+                    txtTips = 'Еще теплее!';
                     attempt++;
                     break;
                 case secret - 1:
                 case secret + 1:
-                    ttopen('Горячо!');
+                    txtTips = 'Горячо!';
                     attempt++;
                     break;
                 case secret:
@@ -61,16 +64,25 @@
                     break;
                 default:
                     if(numberGuess > secret + 3){
-                        ttopen('перелет');
+                        txtTips = 'перелет'
                         attempt++;
                     }else if(numberGuess < secret - 3) {
-                        ttopen('недолет');
+                        txtTips = 'недолет';
                         attempt++;
                     }
            } // end switch
 
+           ttopen(txtTips);
            setInterval(ttclose, 4000); //close tips
-
+           
+           if(attempt > 1){
+            userChoices = userChoices + (attempt + ' попытка => ' + numberGuess +  ' ' + txtTips + '<br>');
+           } else{
+            userChoices = attempt + ' попытка => ' + numberGuess + ' ' + txtTips + '<br>';
+           }
+           document.getElementById('attemptsShowing').innerHTML = userChoices;
+           //console.log(userChoices);
+           
             document.getElementById("btn").innerText = attempt + "/10";
             document.getElementById("numberInput").value = " ";
             document.getElementById("numberInput").focus();
